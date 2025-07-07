@@ -9,10 +9,15 @@ products.forEach(function(product){
     <h3>${product.name}</h3> 
     <p>${product.price}</p>
     <p>${product.description}</p>
-    <button></button>`
+    <button>View details</button>`
        
-   document.getElementById("product-container").appendChild(card);
+   card.addEventListener("click", function(){
+   window.location.href = `product.html?id=${product.id}`;
+  });
 
+document.getElementById("product-container").appendChild(card);
 }); 
+
+
 
 
