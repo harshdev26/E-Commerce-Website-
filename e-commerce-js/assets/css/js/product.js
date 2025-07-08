@@ -18,3 +18,26 @@ if(selectedProduct){
 }else {
   detailContainer.innerHTML = "<p>Product not found</p>";
 }
+
+
+const cartArray = []
+const addCart = document.querySelector("button");
+
+addCart.addEventListener("click", function(){
+ 
+  // get the cart item if it's already present in the array;
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+ 
+  // now i am adding current product to the cart
+  cart.push(selectedProduct);
+
+  // saving the updated cart back to the localstorage
+
+   localStorage.setItem("cart", JSON.stringify(cart));
+
+  //  Alert
+
+  alert("Product Added to cart!");
+
+});
+
