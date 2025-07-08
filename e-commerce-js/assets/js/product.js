@@ -1,4 +1,4 @@
-const params = URLSearchParams(window.location.search);
+const params = new URLSearchParams(window.location.search);
 const id = parseInt(params.get("id"));
 
 let selectedProduct = products.find(p => p.id == id);
